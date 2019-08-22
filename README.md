@@ -3,3 +3,5 @@ Done in accordance with CSC 544 - Advanced Data Visualization, this project visu
 
 # To Run
 Open the `PM4.html` file under the `Projects` directory.
+
+# Screenshots
