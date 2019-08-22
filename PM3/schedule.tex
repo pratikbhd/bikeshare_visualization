@@ -1,0 +1,35 @@
+\section{Schedule} 
+\label{sec:schedule}
+
+For the third project milestone, we started off by trying to complete the proposed goals that were listed in the second project milestone. Following are those proposed goals:
+\begin{enumerate}
+    \item Perform initial data cleansing and formatting to make input reads more streamlined
+    \item Create basic geographic visualizations using maps of the desired location
+    \item First visualization mapping the busiest locations in the city complete
+    \item Initial work on panning and zooming started
+\end{enumerate}
+
+Unfortunately, we had some leftover activity and refinements to make from the previous milestone. We were not able to perform cleansing of our data and also did not categorize them in the order in which they are mapped. So, as the first order of business, we performed the initial data cleansing and formatting. Our intention was to show the maximum number of rentals from each station. So we took out the coordinates of each rental station along with the number of rentals made from that location.
+Upon extracting our desired data, we set about creating a basic geographic visualization. We used leaflet.js to render the overall map of the city of Los Angeles.
+In addition to that, with the application of d3.js, we also accomplished the rendering of the locations, where the maximum number of rentals take place. For initial panning and zooming, i.e. getting details on demand, we have utilized the semantic zoom technique, where the area of the circles represent their relative strength in the number of rentals. Moreover on clicking the circles will give the exact count of the rentals from those respective stations. Effectively, all proposed goals for the Third Project Milestone were completed. This also means that we can stick to schedule and do not need to alter the goals for the next two milestones.
+So for the next two milestones, the work to be done are as following:
+\\\newline
+\begin{table}[h]
+%% Table captions on top in journal version
+ \caption{Project Milestones}\vspace{1ex} % the \vspace adds some space after the top caption
+ \label{tab:milestones}
+ \scriptsize
+ \centering % avoid the use of \begin{center}...\end{center} and use \centering instead (more compact)
+   \begin{tabular}{p{2cm}|p{6cm}}
+     Milestone & Description (\%)\\
+   \hline
+     PM4 & Bottom panel of time frame histogram designed and working\\
+         & Linking the two visualizations complete\\
+	     & Refined the interactions within a visualization\\
+	     & Initial stages of evaluation started\\
+	     & Started preparations for the class presentation\\
+     PM5 & Evaluation process completed\\
+         & Revised data analysis and visualization tuning because on evaluation feedback\\
+         & Class presentation and report submission completed\\
+   \end{tabular}
+\end{table}

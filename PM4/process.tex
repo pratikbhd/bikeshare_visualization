@@ -1,0 +1,18 @@
+\section{Process} 
+\label{sec:process}
+
+The process we went through in implementing PM4. The hurdles we faced and our visualization so far is listed in this section as follows: 
+
+\subsection{Process we went through in implementing PM4}
+In the previous milestone, we have already accomplished the task of creating a basic layout of the map which gives us initial geographical frame on which further improvements can be done. So in this milestone, we worked towards providing the number of rentals happening in each month throughout all the quarters. For this, we first did the processing of our database which had many redundant data fields for our liking and created a dataset which had the number of rentals in every month of the 2.5 years along with the date and then proceeded to make histogram chart reflecting those number alongside our map. Then we made an on click function. So, now when we click on any particular month on the histogram it will show those particular locations where the rentals took place in that particular time frame. 
+
+\subsection{What went more smoothly than expected?}
+Initially, we thought the data processing part may pose to be a little difficult and time-consuming. But when we started working on it the whole process went very smoothly. Besides that, we were also feeling some trepidation about the click function. But eventually, we were able to figure out where the problems were persisting and take the appropriate steps for the solution.
+
+\subsection{What proved to be more difficult?}
+Our initial goal was to implement a cross-filter brush function with which we could select multiple timeframes from the histogram and highlight appropriate locations on the map. But in practice when we tried to encode that, we found that selecting multiple timeframes is harder than we thought. So eventually chose to give up that part of our plan for this milestone and settled to make a click function which will do the same, but for individual months. 
+
+\subsection{What work was done that was not reflected in the Visualization section?}
+The initial work of data cleaning we could not show in the visualization section. Though it was one the most important phases of our work, due to its nature we refrained from mentioning in that visualization section. The data provided to us was in csv (comma separated values) format, and for our purpose, we needed it in .js(javascript) format. So we used python for this purpose and got the desired dataset.
+
+

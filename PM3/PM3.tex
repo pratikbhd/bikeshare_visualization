@@ -1,0 +1,143 @@
+\documentclass[journal]{vgtc}                % final (journal style)
+%\documentclass[review,journal]{vgtc}         % review (journal style)
+%\documentclass[widereview]{vgtc}             % wide-spaced review
+%\documentclass[preprint,journal]{vgtc}       % preprint (journal style)
+
+%% Uncomment one of the lines above depending on where your paper is
+%% in the conference process. ``review'' and ``widereview'' are for review
+%% submission, ``preprint'' is for pre-publication, and the final version
+%% doesn't use a specific qualifier.
+
+%% These few lines make a distinction between latex and pdflatex calls and they
+%% bring in essential packages for graphics and font handling.
+%% Note that due to the \DeclareGraphicsExtensions{} call it is no longer necessary
+%% to provide the the path and extension of a graphics file:
+%% \includegraphics{diamondrule} is completely sufficient.
+%%
+\ifpdf%                                % if we use pdflatex
+  \pdfoutput=1\relax                   % create PDFs from pdfLaTeX
+  \pdfcompresslevel=9                  % PDF Compression
+  \pdfoptionpdfminorversion=7          % create PDF 1.7
+  \ExecuteOptions{pdftex}
+  \usepackage{graphicx}                % allow us to embed graphics files
+  \DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg} % for pdflatex we expect .pdf, .png, or .jpg files
+\else%                                 % else we use pure latex
+  \ExecuteOptions{dvips}
+  \usepackage{minted}
+  \usepackage{graphicx}                % allow us to embed graphics files
+  \DeclareGraphicsExtensions{.eps}     % for pure latex we expect eps files
+\fi%
+
+%% it is recomended to use ``\autoref{sec:bla}'' instead of ``Fig.~\ref{sec:bla}''
+\graphicspath{{figures/}{pictures/}{images/}{./}} % where to search for the images
+
+\usepackage{microtype}                 % use micro-typography (slightly more compact, better to read)
+\PassOptionsToPackage{warn}{textcomp}  % to address font issues with \textrightarrow
+\usepackage{textcomp}                  % use better special symbols
+\usepackage{mathptmx}                  % use matching math font
+\usepackage{times}                     % we use Times as the main font
+\renewcommand*\ttdefault{txtt}         % a nicer typewriter font
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{array}
+
+%% If you are submitting a paper to a conference for review with a double
+%% blind reviewing process, please replace the value ``0'' below with your
+%% OnlineID. Otherwise, you may safely leave it at ``0''.
+\onlineid{0}
+
+%% declare the category of your paper, only shown in review mode
+\vgtccategory{Research}
+
+%% Paper title.
+\title{Visualizing the Los Angeles Metro Bikeshare System}
+
+%% This is how authors are specified in the journal style
+%% indicate IEEE Member or Student Member in form indicated below
+\author{Prathyusha Butti, Pratik Bhandari and Ripan Chowdhury}
+\authorfooter{
+%% insert punctuation at end of each item
+\item
+ \author{Prathyusha Butti, Pratik Bhandari and Ripan Chowdhury}
+ are graduate students at the University of Arizona.
+ 
+E-mail:pbutti@email.arizona.edu. 
+E-mail:pratikbhandari@email.arizona.edu.
+E-mail:rchowdhury1@email.arizona.edu.
+}
+
+%other entries to be set up for journal
+%\shortauthortitle{Firstauthor \MakeLowercase{\textit{et al.}}: Paper Title}
+
+%% Abstract section.
+\abstract{
+Bike sharing systems are gaining immense popularity as an alternative or complementary mode of urban transport. Bike sharing can provide an alternative to traditional modes of transport or, more likely a complementary service for solving the "last mile problem" of getting from a public transportation stop to the final destination. Furthermore, bike sharing systems may help mitigate automobile congestion and reduce pollution, although relatively little research has been done to asses their actual impact in these areas. Visualizing and analyzing the current operations can assist in getting a better grasp on the performance of the system. In this paper, a data visualization approach is used to identify important factors related to the bike-sharing system. We analyze the bike-sharing system such that we are able to group the bike renting trends, locate the busiest stations in the locality and number of monthly or flex passes taken by the customers for different time granularity. We mine the Metro Bike Share, Los Angeles data and discuss the findings of this data set. Using this publicly available data, we conduct some experiments combining data filters and visualizations, potentially analyzing the sustainability of the bike sharing system.
+For this milestone, we have expanded on our progress from the second milestone. One of the major tasks was to work on the development of the map visualization. Along with learning the tools and techniques required for developing the visualization, we worked on the initial data acquisition and cleanup process as well. Besides that, we have worked on the refinements that were suggested from the second milestone.
+
+} % end of abstract
+
+%% Keywords that describe your work. Will show as 'Index Terms' in journal
+%% please capitalize first letter and insert punctuation after last keyword
+\keywords{Bike-Share, Visualization, Clustering, Data Mining.}
+
+%% ACM Computing Classification System (CCS). 
+%% See <http://www.acm.org/class/1998/> for details.
+%% The ``\CCScat'' command takes four arguments.
+
+%\CCScatlist{ % not used in journal version
+% \CCScat{K.6.1}{Management of Computing and Information Systems}%
+%{Project and People Management}{Life Cycle};
+% \CCScat{K.7.m}{The Computing Profession}{Miscellaneous}{Ethics}
+%}
+
+%% Uncomment below to include a teaser figure.
+%   \teaser{
+%   \centering
+%   \includegraphics[width=16cm]{CypressView}
+%   \caption{In the Clouds: Vancouver from Cypress Mountain.}
+%  }
+
+%% Uncomment below to disable the manuscript note
+\renewcommand{\manuscriptnotetxt}{}
+
+%% Copyright space is enabled by default as required by guidelines.
+%% It is disabled by the 'review' option or via the following command:
+% \nocopyrightspace
+
+\vgtcinsertpkg
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% START OF THE PAPER %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%% The ``\maketitle'' command must be the first command after the
+%% ``\begin{document}'' command. It prepares and prints the title block.
+
+%% the only exception to this rule is the \firstsection command
+\firstsection{Overview} % or "Motivation"
+
+\maketitle
+
+\input{overview} 
+
+\input{technical_progress}
+
+%%\input{task_and_data_abstraction}
+
+%%\input{preliminary_designs}
+
+%%\input{technical_progress}
+
+\input{refinements}
+
+\input{schedule}
+
+%\bibliographystyle{abbrv}
+\bibliographystyle{abbrv-doi-hyperref}
+%%use following if all content of bibtex file should be shown
+\nocite{*}
+\bibliography{PM3}
+\end{document}
+

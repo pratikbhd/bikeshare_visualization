@@ -1,0 +1,60 @@
+\section{Refinements from Previous Milestone} 
+\label{sec:research}
+
+The second project milestone needed changes and improvements in the task abstraction section of the project. Much of these changes have been incorporated into this milestone. 
+
+\subsection{Task Abstraction}
+\label{sec:task abstraction}
+
+We initially obtained our data from a popular online data source, Kaggle. The dataset was named \textit{Los Angeles Metro Bike Share Trip Data}. Even though this dataset had enough depth to reason about various trends and patterns, it was less in number which made us look for other sources of similar data. We then found a substantial amount of data in Bike Share Metro's database. Bike Share Metro is a bike sharing service providing in services in Download LA, Port of LA and Venice. This data seemed to fulfill our requirements for this project. This data, like the one before, is from \textit{Los Angeles} and contains the shared bike ride information for nearly 2.5 years, 2016 Q3 to 2018 Q3. 
+
+The structure of the data sources provides the details of where and when journeys are made. In the below mentioned data-sets we have four spatial attributes namely, start\_lon, start\_lat, end\_lon and end\_lat. The data-set has a total of 14 attributes and they are as follows: 
+\begin{itemize}
+    \item trip\_id - Unique ID for a particular trip - This is of type integer
+    \item duration - Duration of the trip in minutes - This is of type integer
+    \item start\_time - Start time of the trip - This is a timestamp in format mm/dd/yyyy hh:mm
+    \item end\_time - End time of the trip - This is a timestamp in format mm/dd/yyyy hh:mm
+    \item start\_lon - Starting position longitude - This is of type float
+    \item start\_lat - Starting position latitude - This is of type float
+    \item start\_station - The station ID where the trip originated - This is of type integer
+    \item end\_station -  The station ID where the trip terminated - This is of type integer
+    \item end\_lat - Destination latitude - This is of type float
+    \item end\_lon - Destination longitude - This is of type float
+    \item bike\_id - Id for each bike - This is of type integer
+    \item plan\_duration - Duration of the customer's plan - This is of type integer
+    \item passholder\_type - The name of the pass holder's plan like "One Day Pass" or "Monthly Pass" or "Walk-up" or "Flex Pass" - This is of type string
+    \item trip\_route\_category\ -  "Round Trip" for trips starting and ending at the same station or "One Way" for all other trips - This is of type string
+\end{itemize}
+
+In order to create a new design process model for data visualization, we utilized our team’s combined experience in visualization design as well as the concepts from existing models as a guide to identify different stages and components of the process. As a redesign team, we identified the goals, and tasks employed in an iterative process for our own visualization project. 
+
+In our first milestone we understood the needs of bike share systems and identified the related data from Metro Bike share on which we could work on to identify the tasks. In our second milestone we ideated several new designs by many discussions among ourselves to generate a plethora of concepts and then winnow these into good ideas to better visualize the bike share system. In our third milestone we have finalized upon a single visualization design which we have decided to work on. This design incorporates various visualizations within a single frame that are layered in an interactive manner. These prototypes must be built to handle and visualize real data-sets, and it is common that, as prototypes get constructed, more design requirements or ideas may be explored and discovered, highlighting the iterative nature of visualization design. Another aspect of the make activity goes beyond design i.e. to employ software engineering and development techniques for writing code and programs to build visualizations to meet the needs of the users. We are using JavaScript, D3.js to build and generate interactive visualizations from the ground up. In the final milestone we have the final design activity in the visualization framework i.e. the deploy activity, with the motivation to construct a visualization system and bring it into effective action in a real-world setting in order to support the goals. The overall visualization artifact of this activity is a usable visualization system. This activity is the ultimate goal of problem-driven visualization design since it supports real-world users in their own work environments. 
+
+ We applied Shneiderman's task taxonomy\cite{Shneiderman:1996:Mantra} to further drill down on the tasks we need to do. As per this taxonomy we first get the overview of the data we have with us. Based on this our main focus is on the number of customers, duration of their trips and the locations from which the bikes are rented. We zoom in on the tasks which interest us to analyze which places see the maximum number of business each day, and to see how the business is growing over time. We filter out the uninteresting data which is not of use in constructing the visualization (like bike station IDs). We can get more details-on-demand by first, panning and zooming into specific geographic locations in the map and then, clicking or hovering over data items in the map which bring up tooltips to display information specific to a location or a single bike ride. In this process we can retrieve the data required for our analysis. By following the above taxonomy so far we could classify our goals into the following:
+
+\begin{itemize}
+    \item G1: Get a mental picture of business according to location:
+    It will be very helpful in analyzing the viability of the bike share system if we could get a mental picture, around which geographic locations most of the business tend to gather. If there was a visible comparison between different locations, it would be so much easier to comprehend where the focus of the business should be, moreover if we can find some connection between high volume of the rentals at those locations, the same model could also be implemented in other locations with similar potential. The idea of business can be explained by the number of drop-offs and hires from a specific station. Typically, a station having a high number of hires has more business. We will also check for stations where both drop-offs and hires are high. These can be considered as locations with high business. By mapping the drop-off i.e. (end\_longitude, end\_latitude) and hire i.e. (start\_longitude, start\_latitude) over the geographic map, we can get a good sense of our task.
+
+    \item G2:  How the customers’ preferences are changing over time
+    There are three kinds of passes available for the customers, namely walk-up (daily), monthly and flex (annual). They provide one day, one month and year-round rental service respectively. If we could find the trends in the change in the number of passes over different time granularity, we could get a clear picture of the preferences of the customers. The time granularity can be either months or quarters or years.
+    
+    \item G3: How the volume of the rentals changes over time:
+    If we can visualize how the number of customers changes over time, it will also provide us with clarifications about which time of the year people tend to chose this form of transport over others. That would be beneficial to understand what compels them to eschew bikes over the other time of the years and what steps could be taken to alleviate their discomfort.
+ 
+\end{itemize}
+\\
+To identify the smaller task in support of the goals, we can take the following steps.
+
+\begin{itemize}
+    \item T1: Getting the overview of the data: 
+    First we must identify all the stations from their longitude and latitude over the city of Los Angeles. This will give us an insight about how all the renting stations are spread over the city. And moreover, if there is a heavy density of stations in some particular locations, we can then analyze how well individual stations are performing in that heavy cluster and can come to decisions about whether some stations may be relocated in some other location where the density of the stations is relatively low.
+
+    \item T2: Cross-filter Based Geographic Mapping:
+    This visualization adds a dynamic element to the previous static visualization. We plan on mapping the drop-offs and hires just like in the first visualization. The data being represented in the geographic plane can be controlled by a slider that can move through a time histogram. This way we can get an analysis of the data from nearly 2.5 years which will give us clear insight of the growth/decline of the business model over time.
+
+    \item T3: Comparing the details of customer preferences of the passes throughout the years:
+    We can make the comparisons between the different kinds of passes over different quarters/months of different years. We can show this way how many passes from the three categories are getting sold each at each time level. Moreover, it can give us some insights about which pass generates the most amount of revenue and which one is the best option for holding on to customer loyalty and thus garnering and maintaining the reputation for the company.
+\end{itemize}
+
+\textit{Summary}: All the visualizations necessary here tend to focus on the comparisons, discovery, and identification to some extent. We can use these task abstractions and objectives as further guides to our design selection process.

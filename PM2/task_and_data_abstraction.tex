@@ -1,0 +1,53 @@
+\section{Task and Data Abstraction} 
+\label{sec:task_and_data_abstraction}
+
+We initially obtained our data from a popular online data source, Kaggle. The dataset was named \textit{Los Angeles Metro Bike Share Trip Data}. Even though this dataset had enough depth to reason about various trends and patterns, it was less in number which made us look for other sources of similar data. We then found a substantial amount of data in Bike Share Metro, which seemed to fulfill our requirements for this project. This data, like the one before, is from Los Angeles and contains the shared bike ride information for 2.5 years, 2016 Q3 to 2018 Q2. 
+The dataset is in Table form and the table has all total 14 attributes. They are:
+\begin{itemize}
+    \item trip\_id - Unique ID for a particular trip
+    \item duration - Duration of the trip in minutes
+    \item start\_time - Start time of the trip
+    \item end\_time - End time of the trip
+    \item start\_lon - Starting position longitude
+    \item start\_lat - Starting position latitude
+    \item start\_station - The station ID where the trip originated
+    \item end\_station -  The station ID where the trip terminated
+    \item end\_lat - Destination latitude
+    \item end\_lon - Destination longitude
+    \item bike\_id - Id for each bike
+    \item plan\_duration - Duration of the customer's plan
+    \item passholder\_type - The name of the pass holder's plan
+    \item trip\_route\_category\ -  "Round Trip" for trips starting and ending at the same station or "One Way" for all other trips
+\end{itemize}
+Moreover, there are four spatial attributes in the datasets, namely, start\_lon, start\_lat, end\_lon and end\_lat. We will be using the trip\_id as the key for each item.
+
+\subsection{Task Abstraction}
+\label{sec:task}
+All the data about bike share venture we could gather focus mainly on the number of customers, duration of their trips and the locations from which the bikes are rented. So, our aim is to analyze which places see the maximum number of business each day, moreover how the business is growing over time. The goals identified by us are the following:
+
+\begin{itemize}
+    \item G1: Get a mental picture of business according to location:
+    It will be very helpful in analyzing the viability of the bike share system if we could get a mental picture, around which geographic locations most of the business tend to gather. If there was a visible comparison between different locations, it would be so much easier to comprehend where the focus of the business should be, moreover if we can find some connection between high volume of the rentals at those locations, the same model could also be implemented in other locations with similar potential. The idea of business can be explained by the number of drop-offs and hires from a specific station. Typically, a station having a high number of hires has more business. We will also check for stations where both drop-offs and hires are high. These can be considered as locations with high business. By mapping the drop-off i.e. (end\_longitude, end\_latitude) and hire i.e. (start\_longitude, start\_latitude) over the geographic map, we can get a good sense of our task.
+
+    \item G2:  How the customers’ preferences are changing over time
+    There are three kinds of passes available for the customers, namely walkup (daily), monthly and flex (annual). They provide one day, one month and year-round rental service respectively. If we could find the trends in the change in the number of passes over different time granularity, we could get a clear picture of the preferences of the customers. The time granularity can be either months or quarters or years.
+    
+    \item G3: How the volume of the rentals changes over time:
+    If we can visualize how the number of customers changes over time, it will also provide us with clarifications about which time of the year people tend to chose this form of transport over others. That would be beneficial to understand what compels them to eschew bikes over the other time of the years and what steps could be taken to alleviate their discomfort.
+ 
+\end{itemize}
+
+To identify the smaller task in support of the goals, we can take the following steps.
+
+\begin{itemize}
+    \item T1: Comparing the aggregate rentals from different regions:
+    We can try to visualize the number of rentals from different geographic locations from the start\_lon and start\_lat attributes from the dataset. The total number of customers from the specific bike stations from different locations can be helpful in getting insights about the viability and the fruitfulness of this venture in different locations.
+
+    \item T2: Comparing rentals at different time of the years:
+    We have the data on the number of rentals according to the different quarters of the years from 2016 to 2018. So if the user wants to zoom into the visualization using a context + focus design approach, it would also be apparent how the number of rentals is changing along the different times of the year.
+
+    \item T3: Comparing the passes throughout the years:
+    We can make the comparisons between the different kinds of passes over different quarters/months of different years. We can show this way how many passes from the three categories are getting sold each at each time level. Moreover, it can give us some insights about which pass generates the most amount of revenue and which one is the best option for holding on to customer loyalty and thus garnering and maintaining the reputation for the company.
+\end{itemize}
+
+Summary: All the visualizations necessary here tend to focus on the comparisons, discovery, and identification to some extent. We can use these task abstractions and objectives as further guides to our design selection process.

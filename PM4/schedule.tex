@@ -1,0 +1,29 @@
+\section{Schedule} 
+\label{sec:schedule}
+
+For the fourth project milestone, we started off by trying to complete the visualization development. 
+\begin{enumerate}
+    \item Create a histogram for indicating the number of bikes rented of the bike sharing system month-wise.
+    \item Create a click function on the histogram to cross-filter data in the map based on the time-frame selection. This activity links the histogram with the map.
+    \item Getting the presentation ready to present before the class.
+\end{enumerate}
+
+Our intention was to show the maximum number of rentals and the revenue from each station based on the selected time-frame. So we took out the coordinates of each rental station along with the number of rentals made from that location. We developed a histogram below the map which indicates the number of bike rentals for different time frames. We have provided a "Click On" feature on the histogram which can be used to select a particular time-frame and related data from that time frame is reflected on the map. Upon extracting our desired data, we set about creating a basic geographic visualization. We used leaflet.js to render the overall map of the city of Los Angeles. In addition to that, with the application of d3.js, we also accomplished the rendering of the locations, where the maximum number of rentals take place. For initial panning and zooming, i.e. getting details on demand, we have utilized the semantic zoom technique, where the area of the circles represent their relative strength in the number of rentals. Moreover on clicking the circles will give the exact count of the rentals from those respective stations. Upon clicking on histogram locations we can select a specific time frame and the data related to that is filtered out and reflected on the map.\newline
+Our initial goal was to generate the histogram based on the revenue generated each month but we later opted for the number of bike rents. We made this decision because we wanted our design goal to focus on a single task or idea. By encoding the number of bike rents on both the visualizations, more focus+context and information relation was achieved. Also. we had planned on implementing a cross-filter over the histogram which would allow us select more than one frame of time and accordingly filter data in the map. We faced several issues when trying to use the brush filter and the cross-filter library. After getting stuck on this for some time, we decided to not waste time on this and implemented the "Click On" feature.\newline
+Effectively, almost all proposed goals for the Fourth Project Milestone were completed sans minor variations. This also means that we can stick to the schedule and do not need to alter the goals for the final milestone.
+So for the final milestone, the work that needs to be done is as following:
+\\\newline
+\begin{table}[h]
+%% Table captions on top in journal version
+ \caption{Project Milestones}\vspace{1ex} % the \vspace adds some space after the top caption
+ \label{tab:milestones}
+ \scriptsize
+ \centering % avoid the use of \begin{center}...\end{center} and use \centering instead (more compact)
+   \begin{tabular}{p{2cm}|p{6cm}}
+     Milestone & Description (\%)\\
+   \hline
+     PM5 & Complete the evaluation process\\
+         & Revise data analysis and visualization tuning because on evaluation feedback\\
+         & Class presentation and report submission\\
+   \end{tabular}
+\end{table}
